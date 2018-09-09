@@ -1,85 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import PowerTween from '../power-tween';
-import IB from '../primitives/inline-block';
+import { css, keyframes } from 'emotion';
+import AddRemoveClassname from '../add-remove-classname';
 
-require('gsap');
-// TweenLite.fromTo(
-//   this, 0.3, { x: -1 }, 
-//   { 
-//     x: 1, 
-//     ease: RoughEase.ease.config({ strength: 8, points: 20, template: Linear.easeNone, randomize: false }), 
-//     clearProps: "x" 
-//   }
-// )
+const magnitude = 4;
+const rot = magnitude * 1.5;
+
+const rumbleAnim = keyframes`
+  0% {transform: rotate(0deg);}
+  25% {transform: translate(${magnitude}px, 0px) rotate(-${rot}deg);}
+  50% {transform: translate(0px, -${magnitude}px) rotate(${rot}deg);}
+  75% {transform: translate(-${magnitude}px, 0px) rotate(${rot}deg);}
+  100% {transform: translate(0px, 2px) rotate(${rot}deg);} 
+`;
+
+const rumbleStyle = css`
+  animation: ${rumbleAnim} .0625s infinite linear;
+`;
+
 function Rumble(props) {
-  const ease = RoughEase.ease.config({
-    strength: 8,
-    points: 20,
-    template: Linear.easeNone,
-    randomize: false,
-  });
-  const dur = 0.3;
-  const amplitude = 3;
-  const repeats = 10;
   return (
-    <PowerTween
-      inline
-      anims={[
-        [
-          {
-            method: 'fromTo',
-            target: child => child,
-            duration: dur,
-            args: [
-              { x: -amplitude },
-              {
-                x: amplitude,
-                ease,
-                clearProps: 'x',
-                repeat: 10,
-              },
-            ],
-          },
-          {
-            method: 'fromTo',
-            target: child => child,
-            duration: dur,
-            args: [
-              { y: -amplitude },
-              {
-                y: amplitude,
-                ease,
-                clearProps: 'y',
-                repeat: 10,
-              },
-              `-=${dur * (repeats + 1)}`,
-            ],
-          },
-          {
-            method: 'fromTo',
-            target: child => child,
-            duration: dur,
-            args: [
-              { rotation: -(amplitude * 0.5) },
-              {
-                rotation: (amplitude * 0.5),
-                ease,
-                clearProps: 'rotation',
-                repeat: 10,
-              },
-              `-=${dur * (repeats + 1)}`,
-            ],
-          },
-        ],
-      ]}
-    >
-      <IB>{props.children}</IB>
-    </PowerTween>
+    <AddRemoveClassname className={rumbleStyle}><div>{props.children}</div></AddRemoveClassname>
   );
 }
-Rumble.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Rumble;

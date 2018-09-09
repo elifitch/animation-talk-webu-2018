@@ -1156,12 +1156,12 @@ export default class Presentation extends React.Component {
           </Slide>
 
         </Deck>
-        <Confetti
+        {/* <Confetti
           shootConfetti={this.state.fireConfetti}
-        />
-        {/* <Footer
-          showSocialPoiner={this.state.showSocialPointer}
         /> */}
+        <Footer
+          showSocialPoiner={this.state.showSocialPointer}
+        />
       </div>
     );
   }
