@@ -286,8 +286,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
-            {/* <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot> */}
+          {/* <Slide>
             <H>
               <H size={3}>Ventral stream - <Fade>Static</Fade></H>
               <H size={3}>Dorsal stream - <Fade>Motion</Fade></H>
@@ -307,7 +306,7 @@ export default class Presentation extends React.Component {
               associated with muscle memory, which makes it ideal for creating actions that reinforce spacial 
               systems and cue gesture interactions.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           {/* <Slide>
             <H size={3}>What System - <Fade>Static design</Fade></H>
@@ -383,6 +382,14 @@ export default class Presentation extends React.Component {
             <Vid src="slot.mp4" />
             <Notes>
               Or as serious as creating animations specifically to help addict someone to gambling, as is common in slot machines 
+              and even many video games such as candy crush and various loot crates.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Vid src="overwatch-loot-box.mp4" />
+            <Notes>
+              Or as serious as creating animations specifically to help addict someone to gambling, as is common in slot machines
               and even many video games such as candy crush and various loot crates.
             </Notes>
           </Slide>
@@ -628,9 +635,9 @@ export default class Presentation extends React.Component {
           <Slide>
             <ListHeading>Influencing emotion</ListHeading>
             <List>
-              <Fade><ListItem>How humans ascribe meaning to motion</ListItem></Fade>
-              <Fade><ListItem>The building blocks of character</ListItem></Fade>
-              <Fade><ListItem>How to design animations to evoke a desired feeling</ListItem></Fade>
+              <div><Fade><ListItem>How humans ascribe meaning to motion</ListItem></Fade></div>
+              <div><Fade><ListItem>The building blocks of character</ListItem></Fade></div>
+              <div><Fade><ListItem>How to design animations to evoke a desired feeling</ListItem></Fade></div>
             </List>
           </Slide>
 
@@ -1048,6 +1055,13 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <PapyrusSlide />
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="avatar-logo.jpg" />
             <Notes>
 
             </Notes>
