@@ -17,8 +17,10 @@ class Pic extends React.Component {
       minWidth: 'none',
     } : {};
     const still = Object.assign({}, baseStyle, portraitStyle, this.props.style);
+    const display = this.props.inline ? 'inline-block' : 'block';
     return (
       <Image
+        display={display}
         style={still}
         src={source}
       />
@@ -29,12 +31,14 @@ class Pic extends React.Component {
 Pic.defaultProps = {
   style: {},
   portrait: false,
+  inline: false,
 };
 
 Pic.propTypes = {
   src: PropTypes.string.isRequired,
   style: PropTypes.object,
   portrait: PropTypes.bool,
+  inline: PropTypes.bool,
 };
 
 export default Pic;

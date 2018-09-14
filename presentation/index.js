@@ -35,6 +35,7 @@ import {
   Rumble,
   Stroke,
 } from './components/anim/index';
+import ImageRow from './components/image-row';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -221,11 +222,39 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <ImageRow
+              srcs={['futura-diagram.jpg', 'architecture.jpg']}
+              styleOverrides={[{ height: '60vh', width: 'auto' }]}
+            />
+            <Annot>[[We are comfy making this assumption that people will draw associations between fonts and buildings, we're comfy assuming that people consume to structured information more easily than unstructured information]</Annot>
+            <Annot>[[clean this up, with equals and whatnot]</Annot>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+          
+          <Slide>
+            <H>But we can't assume the same about motion?</H>
+            <Annot>[[maybe communicate this in images]</Annot>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Animation <Bounce>is</Bounce> <Bounce>no</Bounce> <Bounce>different</Bounce></H>
             <H><Fade>Engages the brain differently</Fade></H>
             <Notes>
               We infer at least as much information from how things move or change over time.
               In fact some research suggests that we infer *more* information from animation than we do "traditional" design
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SSH>Two Streams Hypothesis</SSH>
+            <Notes>
+              animation engages the brain differently than other types of visual information. 
+              The two steams hypothesis describes this.
             </Notes>
           </Slide>
 
@@ -240,10 +269,28 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <div><Bounce><Heading size={4}>Recognition</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Slower processing</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>High consciousness</Heading></Bounce></div>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <div><Bounce><Heading size={4}>Visually guided behavior</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Faster processing</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Low consciousness</Heading></Bounce></div>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
             {/* <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot> */}
             <H>
-              <H size={3}>Ventral stream - <Fade>Static design</Fade></H>
-              <H size={3}>Dorsal stream - <Fade>Animation</Fade></H>
+              <H size={3}>Ventral stream - <Fade>Static</Fade></H>
+              <H size={3}>Dorsal stream - <Fade>Motion</Fade></H>
             </H>
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
