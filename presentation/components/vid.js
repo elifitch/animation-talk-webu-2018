@@ -20,6 +20,11 @@ class Vid extends React.Component {
     this.vid = el;
   }
   render() {
+    const {
+      loop,
+      muted,
+      autoPlay,
+    } = this.props;
     const source = require(`../../assets/${this.props.src}`);
     let wrapperStyle = {};
     if (process.env.NODE_ENV === 'production') {
@@ -30,6 +35,7 @@ class Vid extends React.Component {
         backgroundPosition: 'center',
       };
     }
+    const passedProps = { loop, muted, autoPlay };
     return (
       <div
         style={wrapperStyle}
@@ -41,7 +47,7 @@ class Vid extends React.Component {
             maxHeight: this.props.portrait ? '920px' : '620px',
 
           }}
-          {...this.props}
+          {...passedProps}
           src={source}
           ref={this.assignRef}
         />

@@ -18,7 +18,7 @@ const pointerProps = [
     position: { top: '75%', left: '2%' },
     rotation: -80,
   }, {
-    position: { top: '3%', left: '98%' },
+    position: { top: '3%', left: '85%' },
     rotation: -110,
   },
 ];

@@ -36,6 +36,7 @@ import {
   Stroke,
 } from './components/anim/index';
 import ImageRow from './components/image-row';
+import BounceList from './components/bounce-list';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -443,7 +444,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Research Approved!™</H>
+            <BounceList
+              items={[
+                'University of Rotterdam',
+                'University of New Mexico',
+                'University of Las Vegas',
+                'University of Nottingham',
+                'German Research Foundation',
+              ]}
+            />
             <Notes>
               Studies from the university of rotterdam and university of new mexico among many others have shown that animation 
               helps people retain information, peform better in problem solving tasks, and learn more efficiently. This is because 
@@ -961,9 +970,9 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H>
-              <div><Fade>Ground up</Fade></div>
+              <div><Fade>Conservationist</Fade></div>
               <span>vs.</span>
-              <div><Fade>Top down</Fade></div>
+              <div><Fade>Scorched earth</Fade></div>
             </H>
             <Notes>
               When buildling out UI animation for your brand or project, you can either start from scratch, building from the 
@@ -1172,7 +1181,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Don't let em get ya down</H>
+            <H>Don't let em get ya down.</H>
+            <Fade><H>Persist.</H></Fade>
             <Notes>
               Animation is important and valid way of communicating that leans on decades of scientific research. Don't 
               let somebody tell you that animation is a frivolity to be dismissed. That's no more true of animation
