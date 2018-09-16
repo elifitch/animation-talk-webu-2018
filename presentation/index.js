@@ -138,12 +138,24 @@ export default class Presentation extends React.Component {
             <CallFn fn={this.hideSocialPoiner} />
           </Slide>
           
+          <Slide>
+            <ImageRow
+              srcs={['val-head.jpg', 'rachel-nabors.jpg', 'sarah-drasner.jpg']}
+              styleOverrides={[{ borderRadius: '100%' }, { borderRadius: '100%' }, { borderRadius: '100%' }]}
+            />
+            <Notes>
+              Before I get started, I want to take a moment to acknowledge some folks, without whom I certainly 
+              wouldn't be standing up here talking about animation today, but whithout whom I might not have become 
+              a web developer in the first place. Without them I might have continued down a dangerous and 
+              self destructive path and applied to law school.
+            </Notes>
+          </Slide>
 
           <Slide>
             <ListHeading>Today I'm going to howl about</ListHeading>
             <List>
               <Fade><ListItem>Why animation should be a first class citizen in UI design</ListItem></Fade>
-              <Fade><ListItem>How to use animation to influence user cognition</ListItem></Fade>
+              <Fade><ListItem>How to use animation to influence cognition</ListItem></Fade>
               <Fade><ListItem>How animation can shape users' emotional state</ListItem></Fade>
               <Fade><ListItem>How to build animation into your design process</ListItem></Fade>
             </List>
@@ -1056,27 +1068,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>No brand is "too serious"</H>
-            <Notes>
-              
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <PapyrusSlide />
-            <Notes>
-
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <Pic src="avatar-logo.jpg" />
-            <Notes>
-
-            </Notes>
-          </Slide>
-
-          <Slide>
             <SH>Process</SH>
             <Notes>
               All of this is for naught if you can't bake animation into your web design process.
@@ -1211,8 +1202,29 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <H>Animation is all about the <Stroke>user</Stroke></H>
+            <Notes>
+
+            </Notes>
+          </Slide> */}
+
+          <Slide>
+            <H>No brand is "too serious"</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <PapyrusSlide />
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="avatar-logo.jpg" />
             <Notes>
 
             </Notes>
