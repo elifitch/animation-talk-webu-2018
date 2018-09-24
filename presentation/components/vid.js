@@ -24,6 +24,7 @@ class Vid extends React.Component {
       loop,
       muted,
       autoPlay,
+      controls,
     } = this.props;
     const source = require(`../../assets/${this.props.src}`);
     let wrapperStyle = {};
@@ -35,7 +36,7 @@ class Vid extends React.Component {
         backgroundPosition: 'center',
       };
     }
-    const passedProps = { loop, muted, autoPlay };
+    const passedProps = { loop, muted, autoPlay, controls };
     return (
       <div
         style={wrapperStyle}
@@ -45,7 +46,6 @@ class Vid extends React.Component {
             minWidth: '40vw',
             maxWidth: '80vw',
             maxHeight: this.props.portrait ? '920px' : '620px',
-
           }}
           {...passedProps}
           src={source}
@@ -62,6 +62,7 @@ Vid.propTypes = {
   muted: PropTypes.bool,
   autoPlay: PropTypes.bool,
   portrait: PropTypes.bool,
+  controls: PropTypes.bool,
 };
 
 Vid.defaultProps = {
@@ -69,6 +70,7 @@ Vid.defaultProps = {
   muted: true,
   autoPlay: true,
   portrait: false,
+  controls: false,
 };
 
 export default Vid;

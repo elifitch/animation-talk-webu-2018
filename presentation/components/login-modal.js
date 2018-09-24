@@ -44,7 +44,7 @@ class LoginModal extends React.PureComponent {
     const Spacer = styled('div')`
       margin-bottom: 1em;
     `;
-    console.log('render')
+
     return (
       <ModalContainer>
         <ModalBody data-drop-in-target>

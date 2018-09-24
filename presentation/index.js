@@ -137,19 +137,6 @@ export default class Presentation extends React.Component {
             <CallFn fn={this.showSocialPoiner} />
             <CallFn fn={this.hideSocialPoiner} />
           </Slide>
-          
-          <Slide>
-            <ImageRow
-              srcs={['val-head.jpg', 'rachel-nabors.jpg', 'sarah-drasner.jpg']}
-              styleOverrides={[{ borderRadius: '100%' }, { borderRadius: '100%' }, { borderRadius: '100%' }]}
-            />
-            <Notes>
-              Before I get started, I want to take a moment to acknowledge some folks, without whom I certainly 
-              wouldn't be standing up here talking about animation today, but whithout whom I might not have become 
-              a web developer in the first place. Without them I might have continued down a dangerous and 
-              self destructive path and applied to law school.
-            </Notes>
-          </Slide>
 
           <Slide>
             <ListHeading>Today I'm going to howl about</ListHeading>
@@ -159,6 +146,19 @@ export default class Presentation extends React.Component {
               <Fade><ListItem>How animation can shape users' emotional state</ListItem></Fade>
               <Fade><ListItem>How to build animation into your design process</ListItem></Fade>
             </List>
+          </Slide>
+
+          <Slide>
+            <ImageRow
+              srcs={['val-head.jpg', 'rachel-nabors.jpg', 'sarah-drasner.jpg']}
+              styleOverrides={[{ borderRadius: '100%' }, { borderRadius: '100%' }, { borderRadius: '100%' }]}
+            />
+            <Notes>
+              Before I get started, I want to take a moment to acknowledge some folks, without whom I certainly
+              wouldn't be standing up here talking about animation today, but whithout whom I might not have become
+              a web developer in the first place. Without them I might have continued down a dangerous and
+              self destructive path and applied to law school.
+            </Notes>
           </Slide>
 
           <Slide>
@@ -489,6 +489,13 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <H>[[[change blindness example]]]</H>
+            <Notes>
+              Because animation can be used to attract attention, it can indicate when something has changed in the UI.
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Cueing</H>
             <Notes>
               
@@ -630,6 +637,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H>Animation keeps us mentally engaged</H>
+            <Annot>[[ripe for cutting]]</Annot>
             <Notes>
               Animation keeps us mentally engaged through a long waiting period, and when we're mentally engaged, 
               time seems to move more quickly.
