@@ -408,6 +408,13 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <H>Stewardship.</H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Don't leave the<br />non-visual behind</H>
             <Notes>
               Animation can be a fabulous tool to relay information, as we'll see, but make sure that you include other ways to consume that information for folks who can't see the animation.
