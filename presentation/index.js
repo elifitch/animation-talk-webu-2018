@@ -48,14 +48,15 @@ import Pic from './components/pic';
 import Vid from './components/vid';
 import Footer from './components/footer';
 import LoginModal from './components/login-modal';
+import Confetti from './components/confetti';
+import BouncingBall from './components/bouncing-ball';
+import Comparison from './components/comparison';
 import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
 import ProgressBarDemo from './slides/progress-bar-demo';
-import BouncingBall from './components/bouncing-ball';
 import PapyrusSlide from './slides/papyrus-slide';
 import ThankYouSlide from './slides/thank-you-slide';
-import Confetti from './components/confetti';
 import wiredUK from '../assets/wired-uk.mp4';
 import vimeo from '../assets/vimeo-cameo.mp4';
 import rd from '../assets/rd-contstruction.mp4';
@@ -150,6 +151,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <ImageRow
+              showFirst={false}
               srcs={['val-head.jpg', 'rachel-nabors.jpg', 'sarah-drasner.jpg']}
               styleOverrides={[{ borderRadius: '100%' }, { borderRadius: '100%' }, { borderRadius: '100%' }]}
             />
@@ -235,20 +237,32 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <ImageRow
-              srcs={['futura-diagram.jpg', 'architecture.jpg']}
-              styleOverrides={[{ height: '60vh', width: 'auto' }]}
-            />
-            <Annot>[[We are comfy making this assumption that people will draw associations between fonts and buildings, we're comfy assuming that people consume to structured information more easily than unstructured information]</Annot>
-            <Annot>[[clean this up, with equals and whatnot]</Annot>
+            <Comparison>
+              <Fade block>
+                <Pic
+                  src="futura-diagram.jpg"
+                  style={{ width: 'auto', height: '70vh', minWidth: 'none' }}
+                // style={{ height: '60vh', width: 'auto' }}
+                />
+              </Fade>
+              <H>
+                <span style={{ fontSize: '12rem' }}>=</span>
+              </H>
+              <Fade block>
+                <Pic
+                  src="architecture.jpg"
+                  style={{ width: '100%', height: 'auto', minWidth: 'none' }}
+                />
+              </Fade>
+            </Comparison>
             <Notes>
-              
+
             </Notes>
           </Slide>
           
           <Slide>
-            <H>But we can't assume the same about motion?</H>
-            <Annot>[[maybe communicate this in images]</Annot>
+            <H>But we can't assume<br />the same about motion?</H>
+            {/* <Annot>[[maybe communicate this in images]</Annot> */}
             <Notes>
 
             </Notes>
@@ -282,7 +296,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <div><Bounce><Heading size={4}>Recognition</Heading></Bounce></div>
+            <Heading size={3}>Ventral Stream</Heading>
+            <div><Bounce><Heading size={4}>Fine details</Heading></Bounce></div>
             <div><Bounce><Heading size={4}>Slower processing</Heading></Bounce></div>
             <div><Bounce><Heading size={4}>High consciousness</Heading></Bounce></div>
             <Notes>
@@ -291,6 +306,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Heading size={3}>Dorsal Stream</Heading>
             <div><Bounce><Heading size={4}>Visually guided behavior</Heading></Bounce></div>
             <div><Bounce><Heading size={4}>Faster processing</Heading></Bounce></div>
             <div><Bounce><Heading size={4}>Low consciousness</Heading></Bounce></div>
@@ -494,13 +510,14 @@ export default class Presentation extends React.Component {
               Because animation can be used to attract attention, it can indicate when something has changed in the UI.
             </Notes>
           </Slide>
-
-          <Slide>
+          
+          {/* TODO: rescue this slide */}
+          {/* <Slide>
             <H>[[[change blindness example]]]</H>
             <Notes>
               Because animation can be used to attract attention, it can indicate when something has changed in the UI.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
             <H>Cueing</H>
@@ -624,7 +641,7 @@ export default class Presentation extends React.Component {
           </Slide>
           
           <Slide>
-            <H>Animation governs our perception of time</H>
+            <H>Animation governs our<br />perception of time</H>
             <Notes>
               Humans are really bad at sensing how long things take. We take cues from how things move and change in 
               our environment to know how long time is passing. Thus we can use animation to make it seem like loading 
@@ -642,7 +659,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <H>Animation keeps us mentally engaged</H>
             <Annot>[[ripe for cutting]]</Annot>
             <Notes>
@@ -657,7 +674,7 @@ export default class Presentation extends React.Component {
               Slack conducts a masterclass here, moving from loading anim to loading anim to keep you engaged, 
               and make the loading process seem like it's faster than it actually  is.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
             <SH>Emotion</SH>
@@ -841,7 +858,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H><Anticipation>Anticipation</Anticipation> &amp; <FollowThrough>Follow through</FollowThrough></H>
+            {/* <H><Anticipation>Anticipation</Anticipation> &amp; <FollowThrough>Follow through</FollowThrough></H> */}
+            <H><FollowThrough>Follow through</FollowThrough></H>
             <Notes>
               Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation. 
               Follow through is the opposite, an animation that continues through the final resting place 
@@ -935,8 +953,8 @@ export default class Presentation extends React.Component {
           </Slide> */}
 
           <Slide>
-            <FromTopSquashStretch><LoginModal /></FromTopSquashStretch>
-            <Cite>Squash and stretch</Cite>
+            <FromTopSquashStretch character="serious"><LoginModal /></FromTopSquashStretch>
+            <Cite>Moderate Squash and stretch</Cite>
             <Notes>
               See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride
               animation as only serving this purpose, but even serving the purpose of making people feel happy while using
@@ -946,7 +964,18 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>These combine to form an infinite palette</H>
+            <FromTopSquashStretch character="fun"><LoginModal /></FromTopSquashStretch>
+            <Cite>Fun Squash and stretch</Cite>
+            <Notes>
+              See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride
+              animation as only serving this purpose, but even serving the purpose of making people feel happy while using
+              your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think
+              they're too serious and important to use it.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>These combine to form<br />an infinite palette</H>
             <Notes>
               This might seem limiting, but the right timing, easing, anticipation, follow through, secondary action, and S&amp;S 
               can give you near infinite possibilities in creating the right type of motion for your brand.

@@ -10,10 +10,11 @@ class ImageRow extends React.Component {
       offset,
       distribute,
       styleOverrides,
+      showFirst
     } = this.props;
 
     const images = srcs.map((src, i) => {
-      const WrappedPic = i === 0 ? (
+      const WrappedPic = i === 0 && showFirst ? (
         <Pic style={{ minWidth: 0, width: '100%', ...styleOverrides[i] }} src={src} />
       ) : (
         <Fade block>
@@ -46,12 +47,14 @@ ImageRow.defaultProps = {
   offset: 5,
   distribute: 'space-between',
   styleOverrides: [],
+  showFirst: true,
 };
 ImageRow.propTypes = {
   srcs: PropTypes.arrayOf(PropTypes.string).isRequired,
   offset: PropTypes.number,
   distribute: PropTypes.oneOf(['space-between', 'space-around']),
   styleOverrides: PropTypes.arrayOf(PropTypes.object),
+  showFirst: PropTypes.bool,
 };
 
 export default ImageRow;
