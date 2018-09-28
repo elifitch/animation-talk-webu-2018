@@ -6,8 +6,8 @@ import IB from '../primitives/inline-block';
 function FromTopSquashStretch(props) {
   const tweenBySeriousness = {
     serious: {
-      scaleX: 0.92,
-      scaleY: 1.08,
+      scaleX: 0.95,
+      scaleY: 1.05,
       y: '-20%',
       ease: Elastic.easeOut.config(1, 0.8),
     },

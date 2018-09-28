@@ -13,6 +13,7 @@ import {
   // Image,
   // Text,
   Notes,
+  Code
 } from 'spectacle';
 import {
   Bounce,
@@ -461,6 +462,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H>Provide alternatives</H>
+            <Code>@media screen and (prefers-reduced-motion)</Code>
             <Notes>
               If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
               until the "prefers-reduced-motion" media query lands in more browsers than just Safari. There's no timeline on that right now but 
@@ -511,13 +513,13 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
           
-          {/* TODO: rescue this slide */}
-          {/* <Slide>
-            <H>[[[change blindness example]]]</H>
+          <Slide>
+            <Annot>[[[change blindness example]]]</Annot>
+            <Annot>[[make like an animation of an upload icon, with a badge saying "2". Animate the badge up, flip it over for 3, or drop in a 3]]</Annot>
             <Notes>
               Because animation can be used to attract attention, it can indicate when something has changed in the UI.
             </Notes>
-          </Slide> */}
+          </Slide>
 
           <Slide>
             <H>Cueing</H>
@@ -750,7 +752,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Vid src="fritz-heider-marianne-simmel.mp4" />
-            <Cite>Fritz Heider and Marianne Simmel</Cite>
+            <Cite>Fritz Heider and Marianne Simmel 1944</Cite>
             <Notes>
               This has been verified with experiments as well, most famously by Fritz Heider and Marianne Simmel in 1944.
               They showed this film to subjects, and all of them described the scene by anthropomorphizing the shapes. 
@@ -993,6 +995,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <BrandEnergetic><H>Energetic or lively</H></BrandEnergetic>
+            <Cite>Generous anticipation &amp; followthrough</Cite>
             <Notes>
               Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly 
               and energetic, sharp, quick overshoots though can show frenetic urgency.
@@ -1001,6 +1004,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <BrandCalm><H>Calm, reserved or stable</H></BrandCalm>
+            <Cite>Animate non-motion properties</Cite>
             <Notes>
               Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity,
               blur instead of using motion at all.
@@ -1009,6 +1013,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H><Stretch fromBottom>Playful</Stretch> or <Letterwave>outgoing</Letterwave></H>
+            <Cite>Squash &amp; stretch, secondary action comes out to play</Cite>
             <Notes>
               Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make 
               the sound "boinngngngngngngng". Again, a little goes a long way.
@@ -1146,22 +1151,25 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Vid
-              src="f8-proto.mp4"
-              style={{
-                minWidth: '40vw',
-                maxWidth: '80vw',
-                maxHeight: '400px',
-              }}
-            />
-            <Vid
-              src="fb-trends-in-use-exp.mp4"
-              style={{
-                minWidth: '40vw',
-                maxWidth: '80vw',
-                maxHeight: '400px',
-              }}
-            />
+            <Annot>[[Do a horizontal layout here]]</Annot>
+            <div>
+              <Vid
+                src="f8-proto.mp4"
+                style={{
+                  minWidth: '40vw',
+                  maxWidth: '80vw',
+                  maxHeight: '400px',
+                }}
+              />
+              <Vid
+                src="fb-trends-in-use-exp.mp4"
+                style={{
+                  minWidth: '40vw',
+                  maxWidth: '80vw',
+                  maxHeight: '400px',
+                }}
+              />
+            </div>
             <Notes>
               Once we enter the visual design stage, things become a little more variable. I usually make prototypes right 
               in code that illustrate animations and accompany visual designs, but I've seen framer.js, aftereffects, and 

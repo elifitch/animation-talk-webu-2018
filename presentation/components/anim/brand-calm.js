@@ -42,7 +42,7 @@ function BrandCalm(props) {
             target: child => child,
             duration: dur,
             args: [{
-              y: '-20%', opacity: 0, ease: Power2.easeOut,
+              y: '-10%', opacity: 0, ease: Power2.easeOut,
             }, `-=${dur}`],
           },
         ],
