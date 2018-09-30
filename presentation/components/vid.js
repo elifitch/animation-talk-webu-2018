@@ -39,13 +39,14 @@ class Vid extends React.Component {
     const passedProps = { loop, muted, autoPlay, controls };
     return (
       <div
-        style={wrapperStyle}
+        style={{ ...wrapperStyle, ...this.props.wrapperStyle }}
       >
         <video
           style={{
             minWidth: '40vw',
             maxWidth: '80vw',
             maxHeight: this.props.portrait ? '920px' : '620px',
+            ...this.props.style,
           }}
           {...passedProps}
           src={source}
@@ -63,6 +64,8 @@ Vid.propTypes = {
   autoPlay: PropTypes.bool,
   portrait: PropTypes.bool,
   controls: PropTypes.bool,
+  style: PropTypes.object,
+  wrapperStyle: PropTypes.object,
 };
 
 Vid.defaultProps = {
@@ -71,6 +74,8 @@ Vid.defaultProps = {
   autoPlay: true,
   portrait: false,
   controls: false,
+  style: {},
+  wrapperStyle: {},
 };
 
 export default Vid;

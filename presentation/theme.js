@@ -84,12 +84,16 @@ injectGlobal`
 `;
 
 let mutableTheme = createTheme({
-  primary: whitesmoke, // background
+  // For some reason, primary is always applied to the deck I think
+  // So non transparent blocks the confetti
+  // primary: whitesmoke, // background
+  primary: 'transparent', // background
   secondary: nearBlack,
   tertiary: purple,
   quarternary: '#CECECE',
   nearBlack,
   translucent,
+  transparent: 'transparent',
 }, {
   primary: 'brandon grotesque, futura, helvetica',
   secondary: 'pinopolis, monospace',

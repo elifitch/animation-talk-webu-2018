@@ -38,7 +38,7 @@ import {
 } from './components/anim/index';
 import ImageRow from './components/image-row';
 import BounceList from './components/bounce-list';
-import theme, { contentWidth } from './theme';
+import theme, { contentWidth, whitesmoke } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
 import SlideHeading from './components/slide-heading';
@@ -52,6 +52,7 @@ import LoginModal from './components/login-modal';
 import Confetti from './components/confetti';
 import BouncingBall from './components/bouncing-ball';
 import Comparison from './components/comparison';
+import NotificationBadge from './components/notification-badge';
 import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
@@ -119,10 +120,13 @@ export default class Presentation extends React.Component {
           transitionDuration={300}
           theme={theme}
           controls={false}
-          bgColor="#ff00ff"
           contentWidth={contentWidth}
           contentHeight={1000}
           progress="bar"
+          bgColor="secondary"
+          style={{
+            zIndex: 5
+          }}
         >
           <Slide >
             <Title lineHeight={1}>Web Animation</Title>
@@ -512,6 +516,13 @@ export default class Presentation extends React.Component {
               Because animation can be used to attract attention, it can indicate when something has changed in the UI.
             </Notes>
           </Slide>
+
+          <Slide>
+            <NotificationBadge />
+            <Notes>
+              
+            </Notes>
+          </Slide>
           
           <Slide>
             <Annot>[[[change blindness example]]]</Annot>
@@ -828,7 +839,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Two halves of the same coin</H>
+            {/* <H>Two halves of the same coin</H> */}
+            <Vid src="timing-spacing-coin.mp4" style={{ maxHeight: '80vmin' }} />
             <Notes>
               Timing and spacing work together to form the core of the character you want to create, and indeed the feeling
               you want to evoke.
@@ -837,6 +849,7 @@ export default class Presentation extends React.Component {
           
           <Slide>
             <SSH>Disney's 12 Principles</SSH>
+            <Cite>Ollie Johnston &amp; Frank Thomas</Cite>
             <Notes>
               If we're going to create animations that evoke the desired emotions from our users, that exhibit the right character, 
               traditional animation principles can be extremely useful. Disney's 12 principles are the gold standard, but many 
@@ -1151,22 +1164,27 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[Do a horizontal layout here]]</Annot>
-            <div>
+            <div style={{
+              display: 'flex',
+            }}>
               <Vid
                 src="f8-proto.mp4"
                 style={{
-                  minWidth: '40vw',
-                  maxWidth: '80vw',
-                  maxHeight: '400px',
+                  width: '100%',
+                }}
+                wrapperStyle={{
+                  width: '50%',
+                  display: 'flex',
                 }}
               />
               <Vid
                 src="fb-trends-in-use-exp.mp4"
                 style={{
-                  minWidth: '40vw',
-                  maxWidth: '80vw',
-                  maxHeight: '400px',
+                  width: '100%',
+                }}
+                wrapperStyle={{
+                  width: '50%',
+                  display: 'flex',
                 }}
               />
             </div>
@@ -1180,13 +1198,6 @@ export default class Presentation extends React.Component {
               because once folks fell in love with the animation, they couldn't take nope for an answer.
             </Notes>
           </Slide>
-
-          {/* <Slide>
-            <Pic src="isl-milk-logo.gif" />
-            <Notes>
-              
-            </Notes>
-          </Slide> */}
 
           <Slide>
             <H>Collaboration is <Stroke>essential</Stroke></H>
@@ -1282,18 +1293,21 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide bgColor="transparent" onActive={this.enableConfetti}>
+          <Slide bgColor="transparent">
             <ThankYouSlide />
             {/* <a href="http://assets.eli.wtf/talks/animation-talk-fitc-2018"><Heading size={5} textColor="translucent">http://assets.eli.wtf/talks/animation-talk-fitc-2018</Heading></a> */}
+            <CallFn fn={this.enableConfetti} />
             <CallFn fn={this.shootConfetti} />
             <CallFn fn={this.stopConfetti} />
             <Fade><LinkHeading href="http://assets.eli.wtf/talks/animation-talk-fitc-2018">http://assets.eli.wtf/talks/animation-talk-fitc-2018</LinkHeading></Fade>
+            <CallFn fn={this.showSocialPoiner} />
           </Slide>
 
         </Deck>
-        {/* <Confetti
+        <Confetti
+          enableConfetti={this.state.enableConfetti}
           shootConfetti={this.state.fireConfetti}
-        /> */}
+        />
         <Footer
           showSocialPoiner={this.state.showSocialPointer}
         />
