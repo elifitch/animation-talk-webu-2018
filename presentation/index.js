@@ -1118,18 +1118,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Pic src="ball-bearing.jpg" />
-            <Notes>
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <H>Physical objects help</H>
-            <Notes>
-            </Notes>
-          </Slide>
-
-          <Slide>
             <H>Music works too</H>
             <Notes>
               Much like a physical object, you can use a piece of music as a touchstone. Val Head is an amazin web animator, 
