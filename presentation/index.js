@@ -133,6 +133,20 @@ export default class Presentation extends React.Component {
             <Heading size={4} textColor="nearBlack">How to make friends and influence people</Heading>
           </Slide>
 
+          {
+            process.env.NODE_ENV === 'production' && (
+              <Slide bgColor="#62ffc2">
+                <H size={4} style={{ marginBottom: '0.5em' }}>Hey there, looks like you found my talk on the internet!</H>
+                <H size={4} style={{ marginBottom: '0.5em' }}>If you're interested in some limited speaker notes, press <Code>alt + P</Code> .</H>
+                <H size={4} style={{ marginBottom: '0.5em' }}>FYI there are some issues with font &amp; video loading on safari that I did not have time to address.</H>
+                <H size={4}>It is best viewed at 1920 x 1080 resolution, and I can't guarantee it will look good otherwise.</H>
+                <Notes>
+
+                </Notes>
+              </Slide>
+            )
+          }
+
           <Slide>
             <H>Hi, I'm Eli</H>
             <Fade><Hsmall>I like to make things on the internet</Hsmall></Fade>
@@ -316,7 +330,10 @@ export default class Presentation extends React.Component {
             <div><Bounce><Heading size={4}>Faster processing</Heading></Bounce></div>
             <div><Bounce><Heading size={4}>Low consciousness</Heading></Bounce></div>
             <Notes>
-              
+              The where system is also evolutionary MUCH older, and to borrow a computer science term, closer to the metal.
+              You can use animation to more directly communicate with the users hindbrain, and more efficiently manage users cognition
+              and emotional state, which at the end of the day, is the goal of design: helping people understand information better, 
+              and forging a deeper connection betrween the user and the experience.
             </Notes>
           </Slide>
 
@@ -523,14 +540,6 @@ export default class Presentation extends React.Component {
               
             </Notes>
           </Slide>
-          
-          <Slide>
-            <Annot>[[[change blindness example]]]</Annot>
-            <Annot>[[make like an animation of an upload icon, with a badge saying "2". Animate the badge up, flip it over for 3, or drop in a 3]]</Annot>
-            <Notes>
-              Because animation can be used to attract attention, it can indicate when something has changed in the UI.
-            </Notes>
-          </Slide>
 
           <Slide>
             <H>Cueing</H>
@@ -578,8 +587,7 @@ export default class Presentation extends React.Component {
           <Slide>
             <Heading size={2}>🙅 🔑 👟 🙅</Heading>
             <Notes>
-              When we create interfaces that snap from state to state, it prevents us
-              from building that mental map and instinctively knowing where we are in a flow.
+              
             </Notes>
           </Slide>
 
@@ -757,7 +765,7 @@ export default class Presentation extends React.Component {
               happy jumping style that underlines his optimism. John has a big scrunch up and bound, very bombastic, and 
               it goes right along with his arrogant attitude. Chris has a short boop and plop, he's very self conscious about 
               his limitations when it comes to jumping. and on and on it goes.  The point is, we ascribe characters, feelings, 
-              and indeed emotions to these shapeless polygons.  Their animation was a big part of that.
+              and indeed emotions to these abstract polygons.  Their animation was a big part of that.
             </Notes>
           </Slide>
 
@@ -1155,7 +1163,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Pic src="storyboard.png" />
+            <Pic src="luxo-storyboard.jpg" />
             <Notes>
               During wireframes, storyboards are a good complement. You don't need to do it for every animation, but for 
               important ones its a good idea.  They illustrate interstitial states and fill the gaps between wireframe 
@@ -1235,16 +1243,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Don't let em get ya down.</H>
-            <Fade><H>Persist.</H></Fade>
-            <Notes>
-              Animation is important and valid way of communicating that leans on decades of scientific research. Don't 
-              let somebody tell you that animation is a frivolity to be dismissed. That's no more true of animation
-              than it is of typefaces.
-            </Notes>
-          </Slide>
-
-          <Slide>
             <H>With great power...</H>
             <Notes>
               With great power comes great responsibility. Don't use this for evil.
@@ -1273,6 +1271,16 @@ export default class Presentation extends React.Component {
           </Slide> */}
 
           <Slide>
+            <H>Don't let em get ya down.</H>
+            <Fade><H>Persist.</H></Fade>
+            <Notes>
+              Animation is important and valid way of communicating that leans on decades of scientific research. Don't
+              let somebody tell you that animation is a frivolity to be dismissed. That's no more true of animation
+              than it is of typefaces.
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>No brand is "too serious"</H>
             <Notes>
 
@@ -1295,11 +1303,10 @@ export default class Presentation extends React.Component {
 
           <Slide bgColor="transparent">
             <ThankYouSlide />
-            {/* <a href="http://assets.eli.wtf/talks/animation-talk-fitc-2018"><Heading size={5} textColor="translucent">http://assets.eli.wtf/talks/animation-talk-fitc-2018</Heading></a> */}
             <CallFn fn={this.enableConfetti} />
             <CallFn fn={this.shootConfetti} />
             <CallFn fn={this.stopConfetti} />
-            <Fade><LinkHeading href="http://assets.eli.wtf/talks/animation-talk-fitc-2018">http://assets.eli.wtf/talks/animation-talk-fitc-2018</LinkHeading></Fade>
+            <Fade><LinkHeading href="http://assets.eli.wtf/talks/animation-talk-webu-2018">http://assets.eli.wtf/talks/animation-talk-webu-2018</LinkHeading></Fade>
             <CallFn fn={this.showSocialPoiner} />
           </Slide>
 
